@@ -1,5 +1,8 @@
 require('dotenv').config()
 const express = require('express')
+const dbStratiegy = require('./database/dbFactory')
+
+
 const app = express()
 // const { getDBConnectionInstance } = require('./db')
 const Post = require('./models/post.model')
@@ -8,7 +11,6 @@ const Post = require('./models/post.model')
 
 // new method to coonect to DB
 
-const dbStratiegy = require('./datbase/dbFactory')
 const dbConnection = dbStratiegy.getDatabaseConnection(process.env.DB_TYPE).connect()
 
 
